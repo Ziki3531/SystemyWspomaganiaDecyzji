@@ -1,0 +1,26 @@
+// Alpha Algorithm Process Model
+digraph {
+	graph [nodesep=0.8 rankdir=LR splines=ortho]
+	node [shape=Mrecord]
+	edge [penwidth=2]
+	"ANDs a->['b', 'c']" [label="+" fixedsize=true fontsize=40 height=.6 shape=diamond width=.6]
+	a -> "ANDs a->['b', 'c']"
+	"ANDs a->['b', 'c']" -> c
+	"ANDs a->['b', 'c']" -> b
+	"XORs d->['e', 'f']" [label="×" fixedsize=true fontsize=35 height=.6 shape=diamond width=.6]
+	d -> "XORs d->['e', 'f']"
+	"XORs d->['e', 'f']" -> f
+	"XORs d->['e', 'f']" -> e
+	"ANDm ['b', 'c']->d" [label="+" fixedsize=true fontsize=40 height=.6 shape=diamond width=.6]
+	"ANDm ['b', 'c']->d" -> d
+	c -> "ANDm ['b', 'c']->d"
+	b -> "ANDm ['b', 'c']->d"
+	"XORm ['e', 'f']->g" [label="×" fixedsize=true fontsize=35 height=.6 shape=diamond width=.6]
+	"XORm ['e', 'f']->g" -> g
+	f -> "XORm ['e', 'f']->g"
+	e -> "XORm ['e', 'f']->g"
+	start [label="" shape=circle]
+	start -> a
+	end [label="" shape=circle]
+	g -> end
+}
