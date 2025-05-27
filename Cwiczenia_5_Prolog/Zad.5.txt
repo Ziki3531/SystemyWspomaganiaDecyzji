@@ -1,0 +1,51 @@
+?- consult('fam2.pl').
+true.
+
+?- trace(matka/2).
+%     matka/2: [all]
+true.
+
+?- matka(kasia,robert).
+ T [12] Call: matka(kasia, robert)
+ T [12 +6.8ms] Exit: matka(kasia, robert)
+true.
+
+?- trace.
+true.
+
+[trace]  ?- trace(rodzic/2, +call).
+^  Call: (12) prolog_trace:trace(rodzic/2, +call) ? creep
+   Call: (13) [user:rodzic/2]\==[] ? creep
+   Exit: (13) [user:rodzic/2]\==[] ? creep
+^  Call: (13) apply:maplist(set_trace_pi(+call, user:rodzic/2, user), [user:rodzic/2]) ? creep
+   Call: (15) prolog_trace:set_trace_pi(+call, user:rodzic/2, user, user:rodzic/2) ? creep
+   Call: (16) prolog_code:pi_head(user:rodzic/2, _32914) ? creep
+   Exit: (16) prolog_code:pi_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? creep
+   Call: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), _34572) ? creep
+^  Call: (17) predicate_property(user:rodzic(_33746, _33748), imported_from(_35398)) ? creep
+^  Fail: (17) predicate_property(user:rodzic(_33746, _33748), imported_from(_35398)) ? creep
+   Redo: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), _34572) ? skip
+   Exit: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), user:rodzic(_33746, _33748)) ? Unknown option (h for help)
+   Exit: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), user:rodzic(_33746, _33748)) ? Unknown option (h for help)
+   Exit: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), user:rodzic(_33746, _33748)) ? print
+   Exit: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), user:rodzic(_33746, _33748)) ? No previous search
+   Exit: (16) prolog_trace:resolve_predicate(user:rodzic(_33746, _33748), user:rodzic(_33746, _33748)) ? creep
+   Call: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? skip
+   Exit: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? Unknown option (h for help)
+   Exit: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? 
+Action (h for help) ? /home/swipl/src/swipl-devel/src/os/pl-cstack.c:1047 C-stack dumps are not supported on this platform
+Action (h for help) ? trace
+continue (trace mode)
+retry
+retry prolog_trace:bind_head/2 at level 16
+   Call: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? print
+   Call: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? creep
+   Exit: (16) prolog_trace:bind_head(user:rodzic/2, user:rodzic(_33746, _33748)) ? creep
+   Call: (16) prolog_trace:set_trace(+call, user:rodzic(_33746, _33748), user) ? abort
+% Execution Aborted
+[trace]  ?- 
+|    
+|    
+|    
+|    nodebug.
+true.

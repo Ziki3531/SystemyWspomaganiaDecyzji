@@ -1,0 +1,83 @@
+?- consult('recursion.pl').
+ERROR: c:/users/vboxuser/desktop/cwiczenia_5_prolog/recursion.pl:4:2: Syntax error: Operator expected
+true.
+
+?- trace(factorial).
+%     factorial/2: [all]
+true.
+
+?- trace(factorial).
+%     factorial/2: [all]
+true.
+
+?- %     factorial/2: [all]
+true.
+
+?- |    true.
+
+?- |    ?- trace(fibonacci).
+ERROR: Unknown procedure: (?-)/1
+ERROR:   ?- is the Prolog prompt
+ERROR:   See FAQ at https://www.swi-prolog.org/FAQ/ToplevelMode.html
+ERROR: In:
+ERROR:   [11] throw(error(existence_error(procedure,...),_24880))
+ERROR:    [8] correct_goal((?-trace(fibonacci)),user,[],_24916) at c:/program files/swipl/boot/dwim.pl:92
+ERROR: 
+ERROR: Note: some frames are missing due to last-call optimization.
+ERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+?- trace(fibonacci).
+%     fibonacci/2: [all]
+true.
+
+?- fibonacci(6, F).
+ T [12] Call: fibonacci(6, _3690)
+ T [19] Call: fibonacci(5, _5002)
+ T [26] Call: fibonacci(4, _5986)
+ T [33] Call: fibonacci(3, _6970)
+ T [40] Call: fibonacci(2, _7954)
+ T [47] Call: fibonacci(1, _8938)
+ T [47 +1.8ms] Exit: fibonacci(1, 1)
+ T [47] Call: fibonacci(0, _10766)
+ T [47 +2.5ms] Exit: fibonacci(0, 0)
+ T [40 +11.2ms] Exit: fibonacci(2, 1)
+ T [40] Call: fibonacci(1, _13444)
+ T [40 +2.2ms] Exit: fibonacci(1, 1)
+ T [33 +18.3ms] Exit: fibonacci(3, 2)
+ T [33] Call: fibonacci(2, _16122)
+ T [40] Call: fibonacci(1, _17106)
+ T [40 +2.4ms] Exit: fibonacci(1, 1)
+ T [40] Call: fibonacci(0, _18934)
+ T [40 +1.6ms] Exit: fibonacci(0, 0)
+ T [33 +9.9ms] Exit: fibonacci(2, 1)
+ T [26 +34.9ms] Exit: fibonacci(4, 3)
+ T [26] Call: fibonacci(3, _22462)
+ T [33] Call: fibonacci(2, _23446)
+ T [40] Call: fibonacci(1, _24430)
+ T [40 +2.0ms] Exit: fibonacci(1, 1)
+ T [40] Call: fibonacci(0, _26258)
+ T [40 +2.4ms] Exit: fibonacci(0, 0)
+ T [33 +10.1ms] Exit: fibonacci(2, 1)
+ T [33] Call: fibonacci(1, _28936)
+ T [33 +1.7ms] Exit: fibonacci(1, 1)
+ T [26 +16.7ms] Exit: fibonacci(3, 2)
+ T [19 +62.1ms] Exit: fibonacci(5, 5)
+ T [19] Call: fibonacci(4, _3288)
+ T [26] Call: fibonacci(3, _4272)
+ T [33] Call: fibonacci(2, _5256)
+ T [40] Call: fibonacci(1, _6240)
+ T [40 +6.3ms] Exit: fibonacci(1, 1)
+ T [40] Call: fibonacci(0, _8068)
+ T [40 +6.7ms] Exit: fibonacci(0, 0)
+ T [33 +32.2ms] Exit: fibonacci(2, 1)
+ T [33] Call: fibonacci(1, _10746)
+ T [33 +6.9ms] Exit: fibonacci(1, 1)
+ T [26 +61.0ms] Exit: fibonacci(3, 2)
+ T [26] Call: fibonacci(2, _13424)
+ T [33] Call: fibonacci(1, _14408)
+ T [33 +6.3ms] Exit: fibonacci(1, 1)
+ T [33] Call: fibonacci(0, _16236)
+ T [33 +7.3ms] Exit: fibonacci(0, 0)
+ T [26 +38.9ms] Exit: fibonacci(2, 1)
+ T [19 +119.7ms] Exit: fibonacci(4, 3)
+ T [12 +195.8ms] Exit: fibonacci(6, 8)
+F = 8 

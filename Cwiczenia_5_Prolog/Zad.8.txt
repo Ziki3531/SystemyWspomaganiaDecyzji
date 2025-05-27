@@ -1,0 +1,117 @@
+- consult('blocks.pl').
+true.
+
+?- above(b1, b2).
+true .
+
+?- above(b3, b5).
+true .
+
+?- above(b1, b5).
+false.
+
+?- 
+|    
+|    above(X, b6).
+X = b5 .
+
+?- above(X, b6).
+X = b5 ;
+X = b4 ;
+X = b3 ;X = b5 .
+
+?- |    |    
+|    left(b2, b6).
+X = b5 .
+
+?- left(b2, b6).
+true .
+
+?- left(b2, b7).
+true .
+
+?- left(b1, b6).
+true .
+
+?- left(b1, b7).
+true .
+
+?- left(b3, b7).
+true .
+
+?- left(b6, b2).
+false.
+
+?- 
+|    consult('hanoi.pl').
+true.
+
+?- move(3,left,right,center).
+Move top disk from left to right
+Move top disk from left to center
+Move top disk from right to center
+Move top disk from left to right
+Move top disk from center to left
+Move top disk from center to right
+Move top disk from left to right
+true .
+
+?- consult('map_coloring.pl').
+true.
+
+?- koloruj(P1, P2, P3, P4, P5).
+P1 = P3, P3 = P5, P5 = red,
+P2 = P4, P4 = green .
+
+?- koloruj(P1, P2, P3, P4, P5),
+   write('Solution: '), write([P1, P2, P3, P4, P5]), nl,
+|       fail.|    
+Solution: [red,green,red,green,red]
+Solution: [red,green,red,green,blue]
+Solution: [red,green,red,blue,red]
+Solution: [red,green,red,blue,green]
+Solution: [red,green,blue,red,green]
+Solution: [red,green,blue,red,blue]
+Solution: [red,green,blue,green,red]
+Solution: [red,green,blue,green,blue]
+Solution: [red,blue,red,green,red]
+Solution: [red,blue,red,green,blue]
+Solution: [red,blue,red,blue,red]
+Solution: [red,blue,red,blue,green]
+Solution: [red,blue,green,red,green]
+Solution: [red,blue,green,red,blue]
+Solution: [red,blue,green,blue,red]
+Solution: [red,blue,green,blue,green]
+Solution: [green,red,green,red,green]
+Solution: [green,red,green,red,blue]
+Solution: [green,red,green,blue,red]
+Solution: [green,red,green,blue,green]
+Solution: [green,red,blue,red,green]
+Solution: [green,red,blue,red,blue]
+Solution: [green,red,blue,green,red]
+Solution: [green,red,blue,green,blue]
+Solution: [green,blue,red,green,red]
+Solution: [green,blue,red,green,blue]
+Solution: [green,blue,red,blue,red]
+Solution: [green,blue,red,blue,green]
+Solution: [green,blue,green,red,green]
+Solution: [green,blue,green,red,blue]
+Solution: [green,blue,green,blue,red]
+Solution: [green,blue,green,blue,green]
+Solution: [blue,red,green,red,green]
+Solution: [blue,red,green,red,blue]
+Solution: [blue,red,green,blue,red]
+Solution: [blue,red,green,blue,green]
+Solution: [blue,red,blue,red,green]
+Solution: [blue,red,blue,red,blue]
+Solution: [blue,red,blue,green,red]
+Solution: [blue,red,blue,green,blue]
+Solution: [blue,green,red,green,red]
+Solution: [blue,green,red,green,blue]
+Solution: [blue,green,red,blue,red]
+Solution: [blue,green,red,blue,green]
+Solution: [blue,green,blue,red,green]
+Solution: [blue,green,blue,red,blue]
+Solution: [blue,green,blue,green,red]
+Solution: [blue,green,blue,green,blue]
+false.

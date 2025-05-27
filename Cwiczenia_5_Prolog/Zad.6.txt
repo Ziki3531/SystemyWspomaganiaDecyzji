@@ -1,0 +1,28 @@
+?- |    ?- consult('quadratic_solver.pl').
+ERROR: Unknown procedure: (?-)/1
+ERROR:   ?- is the Prolog prompt
+ERROR:   See FAQ at https://www.swi-prolog.org/FAQ/ToplevelMode.html
+ERROR: In:
+ERROR:   [11] throw(error(existence_error(procedure,...),_148))
+ERROR:    [8] correct_goal('<garbage_collected>',user,[],_184) at c:/program files/swipl/boot/dwim.pl:92
+ERROR: 
+ERROR: Note: some frames are missing due to last-call optimization.
+ERROR: Re-run your program in debug mode (:- debug.) to get more detail.
+?- consult('quadratic_solver.pl').
+true.
+
+?- kwadrat(1, -5, 6, X1, X2).
+X1 = 3.0,
+X2 = 2.0 .
+
+?- kwadrat(1, 4, 4, X1, X2).
+X1 = X2, X2 = -2 .
+
+?- kwadrat(1, 1, 1, X1, X2).
+X1 = X2, X2 = brak_pierwiastkow_rzeczywistych.
+
+?- kwadrat(0, 2, -4, X1, X2).
+X1 = X2, X2 = linear_equation(2) .
+
+?- kwadrat(0, 0, 0, X1, X2).
+X1 = X2, X2 = infinite_solutions .
